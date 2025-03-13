@@ -433,14 +433,5 @@ footer {
         width: 20%;
         margin-bottom: 15px;
     }
-    .video-content{
-        flex-direction: column;
-    }
-    .video-content p{
-        font-size: 16px;
-    }
-    .video-content h2{
-        font-size: 30px;
-    }
 
 }
