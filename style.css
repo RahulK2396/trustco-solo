@@ -515,4 +515,26 @@ footer {
         font-size: 30px;
     }
 
+    .benefits-cards{
+        flex-direction: column;
+    }
+    .benefits-container{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+    .benefits-header h2{
+        font-size: 30px;
+    }
+    .benefits-header p,
+    .benefit-card  p{
+        font-size: 15px;
+    }
+    .benefits-header{
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
 }
