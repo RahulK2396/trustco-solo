@@ -279,6 +279,31 @@ footer {
     align-items: center;
 }
 
+.trusted-by {
+    display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 7%;
+        gap: 15px;
+    
+}
+
+.trusted-text {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.brands {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 70%;
+}
+
+
+
 /* Responsive styles */
 @media screen and (max-width: 768px) {
     .nav-links,
@@ -314,5 +339,13 @@ footer {
     }
     .hero h1 {
         font-size: 30px;
+    }
+    .brands {
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .brands img {
+        height: 24px;
     }
 }
