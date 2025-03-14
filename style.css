@@ -677,4 +677,20 @@ blockquote {
         grid-template-columns: repeat(2, 1fr);
         gap: 15px;
     }
+    .founder-content{
+        grid-template-columns: 100%;
+    }
+    .founder-img{
+        width: 100%;
+    }
+    blockquote{
+        font-size: 14px;
+    }
+    .text-content-founder{
+        text-align: center;
+        display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+    }
 }
