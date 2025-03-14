@@ -177,14 +177,14 @@
             <h2>We Believe <span>people we trust</span></h2>
             <a href="#" class="see-all only-desktop">See All <span>→</span></a>
         </div>
-        
+
         <div class="wrapper">
             <div class="carousel-indicators only-mobile">
-                <div class="indicator"></div>
-                <div class="indicator active"></div>
-                <div class="indicator"></div>
+                <div class="indicator testimonial-indicator"></div>
+                <div class="indicator testimonial-indicator active"></div>
+                <div class="indicator testimonial-indicator"></div>
             </div>
-            <div class="carousel test">
+            <div class="carousel-testimonials test">
                 <div class="testimonial">
                     <div class="quote-icon">❝</div>
                     <blockquote>
@@ -216,12 +216,71 @@
             </div>
             <!-- Carousel Indicators -->
             <div class="carousel-indicators only-desktop">
-                <div class="indicator"></div>
-                <div class="indicator active"></div>
-                <div class="indicator"></div>
+                <div class="indicator testimonial-indicator"></div>
+                <div class="indicator testimonial-indicator active"></div>
+                <div class="indicator testimonial-indicator"></div>
             </div>
 
             <a href="#" class="see-all only-mobile">See All <span>→</span></a>
+
+    </section>
+    <section id="blogs">
+        <div class="blog-header">
+            <h2>Whats new on <span>Trustco.</span> ?</h2>
+            <a href="#" class="see-all only-desktop">See All →</a>
+        </div>
+
+        <div class="wrapper">
+            <div class="carousel-indicators carousel blogs-section only-mobile">
+                <div class="indicator blog-indicator"></div>
+                <div class="indicator blog-indicator active"></div>
+                <div class="indicator blog-indicator"></div>
+            </div>
+            <div class="carousel blog-carousel">
+                <!-- Blog Card 1 -->
+                <div class="blog-card">
+                    <img src="/images//Photo.png" alt="Blog Image">
+                    <div class="blog-content">
+                        <p class="date">23 Nov 2022, by Amanda Hugh</p>
+                        <h3>What Makes an Authentic Employee Profile?</h3>
+                        <p class="excerpt">I'm totally unconvinced that two people can find a person they haven't
+                            known previously...</p>
+                        <a href="#" class="read-more">Read Story →</a>
+                    </div>
+                </div>
+
+                <!-- Blog Card 2 -->
+                <div class="blog-card">
+                    <img src="/images//Photo (1).png" alt="Blog Image">
+                    <div class="blog-content">
+                        <p class="date">15 Nov 2022, by Sofia Kent</p>
+                        <h3>Why Does It Matter to be Authentic Employee?</h3>
+                        <p class="excerpt">I'm totally unconvinced that two people can find a person they haven't
+                            known previously...</p>
+                        <a href="#" class="read-more">Read Story →</a>
+                    </div>
+                </div>
+
+                <!-- Blog Card 3 -->
+                <div class="blog-card">
+                    <img src="/images//Photo (2).png" alt="Blog Image">
+                    <div class="blog-content">
+                        <p class="date">23 Sep 2022, by Jason Bone</p>
+                        <h3>What Makes an Authentic Employee Profile?</h3>
+                        <p class="excerpt">I'm totally unconvinced that two people can find a person they haven't
+                            known previously...</p>
+                        <a href="#" class="read-more">Read Story →</a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-indicators blogs-section only-desktop">
+                <div class="indicator blog-indicator"></div>
+                <div class="indicator blog-indicator active"></div>
+                <div class="indicator blog-indicator"></div>
+            </div>
+
+        </div>
+        <a href="#" class="see-all only-mobile">See All <span>→</span></a>
 
     </section>
 
@@ -235,35 +294,74 @@
         mobileMenu.classList.toggle("open");
     }
     $(document).ready(function () {
-    var $carousel = $(".carousel");
-    var $indicators = $(".indicator");
+        var $carousel = $(".carousel-testimonials");
+        var $indicators = $(".testimonial-indicator");
 
-    $carousel.slick({
-        slidesToShow: 2,
-        dots: false,
-        centerMode: true,
-        responsive: [
-            {
-                breakpoint: 768,
-                settings: {
-                    slidesToShow: 1,
-                    centerMode: false
+        $carousel.slick({
+            slidesToShow: 2,
+            dots: false,
+            centerMode: true,
+            infinite: false,
+            responsive: [
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 1,
+                        centerMode: false
+                    }
                 }
+            ]
+        });
+
+
+        $carousel.on("init reInit afterChange", function (event, slick, currentSlide) {
+            $indicators.removeClass("active");
+            $indicators.eq(currentSlide).addClass("active");
+        });
+
+        $indicators.each(function (index) {
+            $(this).on("click", function () {
+                $carousel.slick("slickGoTo", index);
+            });
+        });
+        var $blogCarousel = $(".blog-carousel");
+        var $blogIndicators = $(".blog-indicator");
+
+        $blogCarousel.slick({
+            slidesToShow: 3,
+            dots: false,
+            centerMode: true,
+            infinite: false,
+            responsive: [
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 1,
+                        centerMode: false
+                    }
+                }
+            ]
+        });
+
+        $blogCarousel.on("init afterChange", function (event, slick, currentSlide) {
+            var slideCount = slick.slideCount; // Total slides
+            $blogIndicators.removeClass("active");
+
+            if (currentSlide < slideCount) {
+                $blogIndicators.eq(currentSlide).addClass("active");
             }
-        ]
-    });
+        });
 
-    $carousel.on("init reInit afterChange", function (event, slick, currentSlide) {
-        $indicators.removeClass("active");
-        $indicators.eq(currentSlide).addClass("active");
-    });
-
-    $indicators.each(function (index) {
-        $(this).on("click", function () {
-            $carousel.slick("slickGoTo", index);
+        $blogIndicators.each(function (index) {
+            $(this).on("click", function () {
+                var totalSlides = $blogCarousel.slick("getSlick").slideCount;
+                var currentSlide = $blogCarousel.slick("slickCurrentSlide");
+                if (index < totalSlides && index !== currentSlide) {
+                    $blogCarousel.slick("slickGoTo", index);
+                }
+            });
         });
     });
-});
 </script>
 
 
