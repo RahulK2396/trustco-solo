@@ -515,12 +515,12 @@ footer {
 }
 
 .metric h2 {
-    color: #002c3e;
+    color: var(--button-color);
     margin: 0;
 }
 
 .metric p {
-    color: #666;
+    color: var(--secondary-color);
     margin: 5px 0 0;
 }
 
@@ -633,6 +633,12 @@ footer {
     .image-container{
         width: unset;
         min-width: none;
+    }
+    #numbers{
+        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
     }
 
 }
