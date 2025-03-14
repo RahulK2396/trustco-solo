@@ -524,6 +524,43 @@ footer {
     margin: 5px 0 0;
 }
 
+#meet-founder {
+    padding: 4% 8%;
+}
+
+.founder-content {
+    display: grid;
+    grid-template-columns: 50% 70%;
+        align-items: center;
+    gap: 30px;
+}
+
+
+blockquote {
+    font-size: 24px;
+    color: var(--secondary-color);
+    margin: 20px 0;
+    font-weight: 400;
+}
+
+.founder-name {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+.founder-title {
+    font-size: 14px;
+    color: var(--secondary-color);
+}
+
+
+.image-content {
+    justify-self: end;
+    position: relative;
+    width: 100%;
+}
+
 /* Responsive styles */
 @media screen and (max-width: 768px) {
     p{
