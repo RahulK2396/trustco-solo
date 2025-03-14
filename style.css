@@ -272,7 +272,7 @@ footer {
 }
 
 .only-mobile {
-    display: none;
+    display: none !important;
 }
 
 .Polygon-round {
@@ -572,7 +572,6 @@ blockquote {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 30px;
 }
 
 .testimonials-header h2 {
@@ -610,9 +609,36 @@ blockquote {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-align: left;
     position: relative;
-    display: flex;
+    display: flex !important; 
     flex-direction: column;
     justify-content: space-evenly;
+    min-height: 290px !important;
+}
+
+.custom-pagination {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.progress-bar {
+    width: 40px;
+    height: 5px;
+    background-color: #d1d5db; /* Light gray */
+    border-radius: 5px;
+    transition: background-color 0.3s, width 0.3s;
+}
+
+.progress-bar.active {
+    width: 50px;
+    background-color: #1f2937; /* Active color */
+}
+
+.slick-dots-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px; /* Adjust spacing */
 }
 
 .testimonial blockquote {
@@ -672,11 +698,52 @@ blockquote {
 }
 
 .indicator.active {
-    width: 20px;
+    width: 50px;
     height: 10px;
     border-radius: 5px;
     background-color: #0d253f;
 }
+.custom-pagination {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.progress-bar {
+    width: 40px;
+    height: 5px;
+    background-color: #d1d5db; /* Light gray */
+    border-radius: 5px;
+    transition: background-color 0.3s, width 0.3s;
+}
+
+.progress-bar.active {
+    width: 50px;
+    background-color: #1f2937; /* Active color */
+}
+.wrapper{
+    width:100%;
+    padding-top: 20px;
+    text-align:center;
+  }
+
+.carousel{
+    margin:0px auto;
+  }
+  .slick-slide{
+    margin:10px;
+  }
+  .slick-slide img{
+    border: 2px solid #fff;
+  }
+  .wrapper .slick-dots li button:before {
+    font-size:20px;
+    color:white;
+  }
+  .slick-list{
+    padding: unset !important;
+  }
 
 /* Responsive styles */
 @media screen and (max-width: 768px) {
@@ -706,7 +773,7 @@ blockquote {
     }
 
     .only-mobile {
-        display: block;
+        display: flex !important;
     }
 
     .hero {
@@ -814,7 +881,7 @@ blockquote {
     }
 
     blockquote {
-        font-size: 14px;
+        font-size: 14px !important; 
     }
 
     .text-content-founder {
@@ -823,5 +890,27 @@ blockquote {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+    .testimonials-container{
+        overflow-x: scroll;
+        grid-template-columns: repeat(2, 100%);
+    }
+    .custom-pagination {
+        position: absolute;
+        top: -12px; /* Moves above the card */
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .progress-bar {
+        width: 30px;
+        height: 4px;
+    }
+
+    .progress-bar.active {
+        width: 40px;
+    }
+    .see-all{
+        justify-content: center;
     }
 }
