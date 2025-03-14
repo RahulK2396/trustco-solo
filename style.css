@@ -504,6 +504,27 @@ footer {
     gap: 10px;
 }
 
+#numbers {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    padding: 4% 8%;
+}
+
+.metric {
+    text-align: center;
+}
+
+.metric h2 {
+    color: #002c3e;
+    margin: 0;
+}
+
+.metric p {
+    color: #666;
+    margin: 5px 0 0;
+}
+
 /* Responsive styles */
 @media screen and (max-width: 768px) {
     p{
