@@ -7,6 +7,8 @@
     <title>Trustco Hero Section</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick-theme.css" />
 </head>
 
 <body>
@@ -173,55 +175,96 @@
         <!-- Section Header -->
         <div class="testimonials-header">
             <h2>We Believe <span>people we trust</span></h2>
-            <a href="#" class="see-all">See All <span>→</span></a>
+            <a href="#" class="see-all only-desktop">See All <span>→</span></a>
         </div>
-
-        <!-- Testimonials Grid -->
-        <div class="testimonials-container">
-            <div class="testimonial">
-                <div class="quote-icon">❝</div>
-                <blockquote>
-                    I'm totally unconvinced that two people can find a person they haven't known previously, and become
-                    an effective co-founder.
-                </blockquote>
-                <div class="testimonial-author">
-                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Andrew Wilkins">
-                    <div class="author-info">
-                        <h4>Andrew Wilkins</h4>
-                        <p>Managing Director, Yess Company</p>
+        
+        <div class="wrapper">
+            <div class="carousel-indicators only-mobile">
+                <div class="indicator"></div>
+                <div class="indicator active"></div>
+                <div class="indicator"></div>
+            </div>
+            <div class="carousel test">
+                <div class="testimonial">
+                    <div class="quote-icon">❝</div>
+                    <blockquote>
+                        I'm totally unconvinced that two people can find a person they haven't known previously, and
+                        become
+                        an effective co-founder.
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Andrew Wilkins">
+                        <div class="author-info">
+                            <h4>Andrew Wilkins</h4>
+                            <p>Managing Director, Yess Company</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="quote-icon">❝</div>
+                    <blockquote>
+                        Easy to use, reasonably priced, and ensures I don’t drop the ball on following up with my leads!
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Daisy Phelps">
+                        <div class="author-info">
+                            <h4>Daisy Phelps</h4>
+                            <p>Digital Marketing Director, Monatc</p>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <div class="testimonial">
-                <div class="quote-icon">❝</div>
-                <blockquote>
-                    Easy to use, reasonably priced, and ensures I don’t drop the ball on following up with my leads!
-                </blockquote>
-                <div class="testimonial-author">
-                    <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Daisy Phelps">
-                    <div class="author-info">
-                        <h4>Daisy Phelps</h4>
-                        <p>Digital Marketing Director, Monatc</p>
-                    </div>
-                </div>
+            <!-- Carousel Indicators -->
+            <div class="carousel-indicators only-desktop">
+                <div class="indicator"></div>
+                <div class="indicator active"></div>
+                <div class="indicator"></div>
             </div>
-        </div>
-        <!-- Carousel Indicators -->
-        <div class="carousel-indicators">
-            <div class="indicator"></div>
-            <div class="indicator active"></div>
-            <div class="indicator"></div>
-        </div>
+
+            <a href="#" class="see-all only-mobile">See All <span>→</span></a>
+
     </section>
 
 
 </body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js"></script>
 <script>
     function toggleMenu() {
         const mobileMenu = document.getElementById("mobileMenu");
         mobileMenu.classList.toggle("open");
     }
+    $(document).ready(function () {
+    var $carousel = $(".carousel");
+    var $indicators = $(".indicator");
+
+    $carousel.slick({
+        slidesToShow: 2,
+        dots: false,
+        centerMode: true,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
+                    centerMode: false
+                }
+            }
+        ]
+    });
+
+    $carousel.on("init reInit afterChange", function (event, slick, currentSlide) {
+        $indicators.removeClass("active");
+        $indicators.eq(currentSlide).addClass("active");
+    });
+
+    $indicators.each(function (index) {
+        $(this).on("click", function () {
+            $carousel.slick("slickGoTo", index);
+        });
+    });
+});
 </script>
+
 
 </html>
