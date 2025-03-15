@@ -844,7 +844,7 @@ h3 {
 
 footer {
     background-color: #ffffff;
-    padding: 50px 80px;
+    padding: 4% 8%;
     font-family: "Arial", sans-serif;
     border-top: 5px solid #f5f5f5;
 }
@@ -931,7 +931,7 @@ justify-content: space-between;
 
 
 /* Responsive styles */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
     p {
         font-size: 14px !important;
     }
@@ -1111,5 +1111,16 @@ justify-content: space-between;
         justify-content: center;
         align-items: center;
         text-align: center;
+    }
+    .footer-container{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .footer-left{
+        max-width: unset;
+    }
+    .footer-column h3 {
+        font-size: 18px;
     }
 }
