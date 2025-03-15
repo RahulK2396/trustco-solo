@@ -1011,4 +1011,18 @@ h3 {
     .see-all{
         justify-content: center;
     }
+    #cta-banner{
+        grid-template-columns: 100%;
+    }
+    .cta-image{
+        width: 100%;
+    }
+    .cta-text h2{
+        width: unset;
+    }
+    .cta-text{
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
 }
