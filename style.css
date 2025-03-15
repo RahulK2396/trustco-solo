@@ -6,7 +6,7 @@
     --text-color: #333;
     --background-color: #f8f9fa;
     --background-grey: #f3f5f6;
-    --button-color: #043A53
+    --button-color: #043A53;
 }
 
 * {
@@ -798,6 +798,50 @@ h3 {
     font-weight: bold;
     color: var(--text-color);
 }
+
+#cta-banner {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    align-items: center;
+    gap: 50px;
+    padding: 4% 8%;
+    background-color: black;
+}
+
+.cta-text {
+    display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 30px;
+    
+    color: var(--background-color);
+}
+
+.services{
+    background-color: #F0B73F;
+}
+
+.cta-text h2 {
+    font-weight: bold;
+    margin-bottom: 10px;
+    width: 143%;
+}
+
+.cta-text p {
+    margin-bottom: 20px;
+}
+
+.cta-image-container {
+    position: relative;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.cta-image {
+    border-radius: 10px;
+}
+
 
 /* Responsive styles */
 @media screen and (max-width: 768px) {
