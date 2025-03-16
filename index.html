@@ -342,10 +342,11 @@
     </footer>
     <footer class="site-credits">
         <div class="credits-container">
-            <span class="copyright">© <span id="year"></span> Trustco.</span>
+            <span class="copyright only-desktop">© <span id="year"></span> Trustco.</span>
             <div class="footer-links terms">
                 <a href="#">Term of Service</a>
                 <a href="#">Privacy Policy</a>
+                <a href="#">Language</a>
             </div>
             <div class="language-switcher">
                 <img src="/images/global-line.png" alt="Language" class="globe-icon">
@@ -356,6 +357,8 @@
                     <option>Deutsch</option>
                 </select>
             </div>
+            <span class="copyright only-mobile">© <span id="years"></span> Trustco.</span>
+
         </div>
     </footer>
 
@@ -364,13 +367,14 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js"></script>
 <script>
-    
+
     function toggleMenu() {
         const mobileMenu = document.getElementById("mobileMenu");
         mobileMenu.classList.toggle("open");
     }
     $(document).ready(function () {
         document.getElementById("year").textContent = new Date().getFullYear();
+        document.getElementById("years").textContent = new Date().getFullYear();
         var $carousel = $(".carousel-testimonials");
         var $indicators = $(".testimonial-indicator");
 

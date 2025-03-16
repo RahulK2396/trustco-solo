@@ -930,7 +930,7 @@ justify-content: space-between;
 
 .site-credits {
     background-color: #f5f8fa;
-    padding: 15px 80px;
+    padding: 1% 8%;
     font-family: "Arial", sans-serif;
     font-size: 14px;
     color: #98a4b3;
@@ -1181,5 +1181,14 @@ justify-content: space-between;
     }
     .footer-column h3 {
         font-size: 18px;
+    }
+    .credits-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 10px;
+    }
+    .copyright{
+        gap: 3px;
     }
 }
